@@ -20,6 +20,7 @@ end
 function love.load()
 	mode = "Boat"
 	spritebatch = love.graphics.newSpriteBatch(mapsprites.texture, 1000, "stream")
+	font = love.graphics.newFont(30)
 	ship.init(wm)
 end
 
@@ -36,18 +37,30 @@ end
 -- Drawing Functions
 function love.draw()
 	-- Sprites
-	love.graphics.setColor(255, 255, 255, 255)
 	spritebatch:clear()
 	spritebatch:bind()
 	if mode == "Boat" then
+		love.graphics.setColor(255, 255, 255, 255)
 		wm.draw(spritebatch, mapsprites)
 		ship.draw(spritebatch, mapsprites)
 	elseif mode == "Town" then
+		love.graphics.setColor(255, 255, 255, 255)
 		love.graphics.draw(towns[ship.town].background,0,0)
+		love.graphics.setColor(0, 0, 0, 255)
+		love.graphics.rectangle("fill", 20, 20, 500, 80)
+		love.graphics.setColor(255,0,0,255)
+		love.graphics.setFont(love.graphics.newFont(30))
+		love.graphics.print("Welcome to "..towns[ship.town].name.."!", 30, 30)
+		love.graphics.setFont(love.graphics.newFont(12))
+		love.graphics.print("Affiliation: "..towns[ship.town].affiliation, 30, 65)
 	end
 	spritebatch:unbind()
 	love.graphics.draw(spritebatch)
 
+	-- Text
+	if mode == "Town" then
+		
+	end
     -- Return to draw colour
   	love.graphics.setColor(255, 255, 255, 255)
     loveframes.draw()
