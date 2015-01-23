@@ -22,7 +22,7 @@ end
 
 local TextureAtlas = {}
 local Quads = {}
-local Texture = love.graphics.newImage( "res/sprites/spritesheet.png" )
+local Texture = love.graphics.newImage( "res/sprites/mapsprites.png" )
 
 Quads["Boat"] = love.graphics.newQuad(2, 2, 32, 32, 206, 36 )
 Quads["City"] = love.graphics.newQuad(36, 2, 32, 32, 206, 36 )

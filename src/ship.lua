@@ -4,7 +4,8 @@ ship.y = 0
 ship.cam_x = 0
 ship.cam_y = 0
 ship.map = {}
-
+ship.atTown = false
+ship.town = 0
 
 function ship.init(worldmap)
 	ship.map = worldmap
@@ -20,38 +21,52 @@ function ship.draw(spritebatch, spritesheet)
 end
 
 function ship.move(key, unicode)
-
 	if key == 'z' or key == ' ' then
-        if  (ship.map.getAt(ship.x,ship.y-1) ~= nil and ship.map.getAt(ship.x,ship.y-1) == 'D') or
-            (ship.map.getAt(ship.x,ship.y+1) ~= nil and ship.map.getAt(ship.x,ship.y+1) == 'D') or
-            (ship.map.getAt(ship.x-1,ship.y) ~= nil and ship.map.getAt(ship.x-1,ship.y) == 'D') or
-            (ship.map.getAt(ship.x+1,ship.y) ~= nil and ship.map.getAt(ship.x+1,ship.y) == 'D') then
-            return true
+        -- Work Out Which Town
+        if ship.map.getAt(ship.x,ship.y-1) ~= nil and ship.map.getAt(ship.x,ship.y-1) == 'D' then
+            ship.atTown = true
+            ship.town = ship.map.whichTown(ship.x, ship.y-1)
+        elseif ship.map.getAt(ship.x,ship.y+1) ~= nil and ship.map.getAt(ship.x,ship.y+1) == 'D' then
+            ship.atTown = true
+            ship.town = ship.map.whichTown(ship.x, ship.y+1)
+        elseif ship.map.getAt(ship.x-1,ship.y) ~= nil and ship.map.getAt(ship.x-1,ship.y) == 'D' then
+            ship.atTown = true
+            ship.town = ship.map.whichTown(ship.x-1, ship.y)
+        elseif ship.map.getAt(ship.x+1,ship.y) ~= nil and ship.map.getAt(ship.x+1,ship.y) == 'D' then
+            ship.atTown = true
+            ship.town = ship.map.whichTown(ship.x+1, ship.y)
+        end
+        if ship.atTown then 
+            print ("Entering Town "..ship.town)
+            return "Town" 
         end
     end
 
     if key == 'up' and ship.map.getAt(ship.x,ship.y-1) ~= nil and ship.map.getAt(ship.x,ship.y-1) == 'W' then
 	    ship.y = ship.y - 1
     	if ship.y < 0 then ship.y = 0; end
-        print (ship.map.getAt(ship.x,ship.y))
+        --print (ship.map.getAt(ship.x,ship.y))
     end
+
     if key == 'down' and ship.map.getAt(ship.x,ship.y+1) ~= nil and ship.map.getAt(ship.x,ship.y+1) == 'W' then
         ship.y = ship.y + 1
         if ship.y > ship.map.h - 2 then ship.y = ship.map.h - 2; end
-       	print (ship.map.getAt(ship.x,ship.y))
+       	--print (ship.map.getAt(ship.x,ship.y))
     end
    
     if key == 'left' and ship.map.getAt(ship.x-1,ship.y) ~= nil and ship.map.getAt(ship.x-1,ship.y) == 'W' then
-        ship.x = math.max(ship.x-1, 1)
-        print (ship.map.getAt(ship.x,ship.y))
+        ship.x = math.max(ship.x-1, 0)
+        --print (ship.map.getAt(ship.x,ship.y))
     end
+
     if key == 'right' and ship.map.getAt(ship.x+1,ship.y) ~= nil and ship.map.getAt(ship.x+1,ship.y) == 'W' then
         ship.x = math.min(ship.x+1, ship.map.w-2)
-        print (ship.map.getAt(ship.x,ship.y))
+        --print (ship.map.getAt(ship.x,ship.y))
     end
+
     ship.map.repositionCamera(ship.x, ship.y)
     
-    return false
+    return "Boat"
 end
 
 return ship
