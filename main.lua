@@ -3,16 +3,14 @@ debug = true
 -- Import Functions
 loveframes = require("libs.loveframes")
 spritesheet = require("res.sprites.spritesheet")
-wm = require("res.maps.worldmap")
+wm = require("src.maps.worldmap")
+ship = require("src.ship")
 
 -- Load Functions
 function love.load()
-	mode = "World Map"
-	count = 0
-	dialogue = "Welcome to my shitty game."
-	command = "No commands given yet"
+	mode = "Boat"
 	spritebatch = love.graphics.newSpriteBatch(spritesheet.texture, 1000, "stream")
-	doCommand = false
+	ship.init(wm)
 end
 
 -- Update Functions
@@ -21,29 +19,27 @@ function love.update(dt)
 		love.event.push('quit')
 	end
 
-	if doCommand then
-		count = count + 1
-		doCommand = false
-	end
-
     loveframes.update(dt)
 end
 
 -- Drawing Functions
 function love.draw()
-	-- Set draw colour
+	-- Sprites
 	love.graphics.setColor(255, 255, 255, 255)
 	spritebatch:clear()
 	spritebatch:bind()
 	wm.draw(spritebatch, spritesheet)
+	ship.draw(spritebatch, spritesheet)
 	spritebatch:unbind()
 	love.graphics.draw(spritebatch)
 
-	-- Set text colour
+	-- Text
+	--[[
 	love.graphics.setColor(0, 255, 0, 255)
     love.graphics.print(dialogue, 30, 30) 
     love.graphics.print(count, 0, 0) 
     love.graphics.print(command, 150, 600)
+	]]--
 
     -- Return to draw colour
   	love.graphics.setColor(255, 255, 255, 255)
@@ -63,7 +59,8 @@ end
  
 function love.keypressed(key, unicode)
     -- your code
-    wm.keypressed(key, unicode)
+    local result = ship.move(key, unicode)
+    if result == true then print ("dock found"); end
     loveframes.keypressed(key, unicode)
 end
  
@@ -77,6 +74,7 @@ function love.textinput(text)
 end
 
 -- Making Text Input Boxes
+--[[
 local textinput = loveframes.Create("textinput")
 textinput:SetPos(150, 570)
 textinput:SetWidth(500)
@@ -88,3 +86,4 @@ textinput.OnEnter = function(object, text)
     end
 end
 textinput:SetFont(love.graphics.newFont(12))
+]]--
