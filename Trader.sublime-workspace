@@ -1,0 +1,212 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Luke/Code/Games/Trader/main.lua",
+		"/C/Users/Luke/Downloads/H/SlaveMaker 3.3/Readme.txt",
+		"/C/Users/Luke/Downloads/H/H/Brothel Sim Original/BrothelS.im-master/i-READ THE README FIRST.txt",
+		"/C/Users/Luke/Downloads/H/H/Brothel Sim Original/BrothelS.im-master/j-READ THE README FIRST.txt",
+		"/C/Users/Luke/Videos/Kill la Kill/H/LoaderWeeWillieBundle/README.txt",
+		"/C/Users/Luke/Videos/Kill la Kill/H/LoaderWeeWillieBundle/WeeWillieBundle.txt",
+		"/C/Users/Luke/Desktop/db/fraction.cpp",
+		"/C/Users/Luke/Desktop/db/fraction.h",
+		"/C/Users/Luke/Desktop/db/record.tem",
+		"/C/Users/Luke/Desktop/db/interactive.cpp",
+		"/C/Users/Luke/Desktop/db/database.h",
+		"/C/Users/Luke/Desktop/db/database.tem",
+		"/C/Users/Luke/Desktop/db/utility.h",
+		"/C/Users/Luke/Desktop/db/record.h",
+		"/C/Users/Luke/Desktop/work.txt",
+		"/C/Users/Luke/Videos/Kill la Kill/H/LoaderWeeWillieBundle/Guide/Setup Guide.txt",
+		"/C/Users/Luke/Code/Graphics/ass1/ass1.txt",
+		"/C/Users/Luke/Videos/Dark Souls 2 No Glitches Speedrun Notes.txt",
+		"/C/Users/Luke/Documents/Any% Glichless Tests.txt",
+		"/C/Users/Luke/Documents/Speedrun/Any% DS1 BKH",
+		"/C/Users/Luke/Downloads/Violated Hero 3 + English Patch + CG Unlock/readme.txt",
+		"/C/Users/Luke/AppData/Local/Temp/Temp1_VH3 English RC3.zip/VH3 English Readme.txt",
+		"/C/Users/Luke/Downloads/Violated Hero 2/Violated Hero 2/readme.txt",
+		"/C/Users/Luke/Code/Security/Locals1/Locals1Writeup.txt",
+		"/C/Users/Luke/Code/OS/Assn3 ext lecture notes",
+		"/C/Users/Luke/Code/OS/asst3 design.txt",
+		"/C/Users/Luke/Downloads/Games/(同人ソフト) [140627] [みるくぷりん1型] 巨乳ふぁいたーさくらの犯られ旅/sakura_no_tabi_1_100/òKé╕é¿ô╟é▌é¡é╛é│éó.txt",
+		"/C/Users/Luke/Downloads/Games/[hshare.net].Daibanchou-Big.Bang.Age/[hshare.net].Daibanchou-Big.Bang.Age/[hshare.net].Daibanchou-Big.Bang.Age.iso",
+		"/C/Users/Luke/Downloads/RPG Maker VX ACE 1.01a/RMVX ACE RTP/RTP100/ReadMe.txt",
+		"/C/Users/Luke/Downloads/RPG Maker VX ACE 1.01a/RMVX ACE Setup/Read Me.txt",
+		"/C/Users/Luke/Desktop/livestreamer.txt",
+		"/C/Users/Luke/Documents/GitHub/amazeing-grace/src/PathfindingEnemy.java",
+		"/C/Users/Luke/AppData/Local/Temp/suicideInput.txt",
+		"/C/Users/Luke/AppData/Local/Temp/testData.sh",
+		"/C/Users/Luke/Code/OS/ASSN2 design.txt",
+		"/C/Users/Luke/Code/AI/asst1/asst1.pro",
+		"/C/Users/Luke/Documents/laptopmodel.txt",
+		"/C/Users/Luke/Desktop/Touhou Project Collection/Touhou Project 13 Ten Desires/[#Comiket][C80] Touhou 13 東方神霊廟 ～ Ten Desires/th13/readme.txt",
+		"/C/Users/Luke/Code/Security/Exploitation1/exploitation1 writeups",
+		"/C/Users/Luke/Code/Security/Web2/xss.txt",
+		"/C/Users/Luke/Downloads/SR_RETURNS_DRAGONFALL_R.G.ILITA/nfo.nfo",
+		"/D/ReadMe_Americas/Readme_en.txt",
+		"/G/Laptop Backup/Toshiba/LAN Games/Counter-Strike Source v1807769/!!! README !!!.txt",
+		"//server/luke/Important Stuff/Film List.txt",
+		"/C/Users/Luke/Code/eclipseworkspace/HotelBookingSystem/testing.txt",
+		"/C/Users/Luke/Code/eclipseworkspace/HotelBookingSystem/output3.txt",
+		"/C/Users/Luke/Code/eclipseworkspace/HotelBookingSystem/input3.txt",
+		"/C/Users/Luke/Code/eclipseworkspace/HotelBookingSystem/output2.txt",
+		"/C/Users/Luke/Code/eclipseworkspace/HotelBookingSystem/input2.txt",
+		"/C/Users/Luke/Code/eclipseworkspace/HotelBookingSystem/output1.txt",
+		"/C/Users/Luke/Code/eclipseworkspace/HotelBookingSystem/input1.txt",
+		"/C/Users/Luke/Code/eclipseworkspace/HotelBookingSystem/instructionset.txt",
+		"/E/Office 2013/Key.txt",
+		"/E/Office 2010/License.txt",
+		"//server/software/Microsoft/Office 2013 Professional Plus/Key.txt",
+		"/C/Users/Luke/Dropbox/Amber Luke/Luke Client Hours/Luke Total Hours/Luke Hours 2014-03-25 to 2014-03-31.xlsx",
+		"/C/Users/Luke/Code/OS/Notes/ASSN2 pre-release notes",
+		"/C/Users/Luke/Downloads/sys161.conf"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "Trader.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
