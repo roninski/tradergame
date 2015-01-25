@@ -1,0 +1,10 @@
+Modes: Boat, Town, 
+Draw Loop
+
+Update Loop
+
+KeyPress Loop
+
+All update methods will be called by KeyPress instead of update. Update will just handle graphically updating.
+Draw will call draw methods of relevant files.
+

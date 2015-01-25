@@ -7,14 +7,13 @@ mapsprites = require("res.sprites.mapsprites")
 ship = require("src.ship")
 wm = require("src.maps.worldmap")
 -- Town Mode Imports
+activetown = require("src.town")
 townlist = require("src.towns."..wm.name..".list")
 towns = {}
 for t=1, #townlist do
 	print ("Importing Town "..t)
 	towns[t] = require("src.towns."..wm.name.."."..townlist[t])
 end
--- Battle Mode Imports
-
 
 -- Load Functions
 function love.load()
@@ -44,23 +43,11 @@ function love.draw()
 		wm.draw(spritebatch, mapsprites)
 		ship.draw(spritebatch, mapsprites)
 	elseif mode == "Town" then
-		love.graphics.setColor(255, 255, 255, 255)
-		love.graphics.draw(towns[ship.town].background,0,0)
-		love.graphics.setColor(0, 0, 0, 255)
-		love.graphics.rectangle("fill", 20, 20, 500, 80)
-		love.graphics.setColor(255,0,0,255)
-		love.graphics.setFont(love.graphics.newFont(30))
-		love.graphics.print("Welcome to "..towns[ship.town].name.."!", 30, 30)
-		love.graphics.setFont(love.graphics.newFont(12))
-		love.graphics.print("Affiliation: "..towns[ship.town].affiliation, 30, 65)
+		activetown.draw()
 	end
 	spritebatch:unbind()
 	love.graphics.draw(spritebatch)
 
-	-- Text
-	if mode == "Town" then
-		
-	end
     -- Return to draw colour
   	love.graphics.setColor(255, 255, 255, 255)
     loveframes.draw()
@@ -78,11 +65,12 @@ end
 function love.keypressed(key, unicode)
 	if mode == "Boat" then
 	    mode = ship.move(key, unicode)
+	    if mode == "Town" then
+	    	activetown.setTown(towns[ship.getTown()])
+	    end
     elseif mode == "Town" then
     	if key == 'x' then
-    		mode = "Boat"
-    		ship.town = 0
-    		ship.atTown = true
+    		mode = ship.exitTown()
     	end
     end
     -- if mode ~= "Boat" then print (mode); end
