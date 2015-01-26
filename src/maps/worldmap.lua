@@ -35,6 +35,8 @@ local map={
 
 -- Initialise Map variables
 local World = {}
+World.sprites = require("res.sprites.mapsprites")
+World.spritebatch = love.graphics.newSpriteBatch(World.sprites.texture, 1000, "stream")
 World.map = map
 World.w = #map[1] -- Obtains the width of the first row of the map
 World.h = #map    -- Obtains the height of the map
@@ -62,30 +64,34 @@ World.cam_mid_y = World.display_h / 2
 if World.cam_mid_y % 1 ~= 0 then World.cam_mid_y = World.cam_mid_y + 0.5; end
 
 -- Functions
-function World.draw(spritebatch, spritesheet)
+function World.draw()
+    World.spritebatch:clear()
+    World.spritebatch:bind()
     for y=1, (World.display_h) do
         for x=1, (World.display_w) do
-            if World.map[y+World.y][x+World.x] == 'D' then spritebatch:add(
-                spritesheet.quads['Dock'], (x*World.tile_w)+World.offset_x,
+            if World.map[y+World.y][x+World.x] == 'D' then World.spritebatch:add(
+                World.sprites.quads['Dock'], (x*World.tile_w)+World.offset_x,
                 (y*World.tile_h)+World.offset_y)
-            elseif World.map[y+World.y][x+World.x] == 'G' then spritebatch:add(
-                spritesheet.quads['Grass'], (x*World.tile_w)+World.offset_x,
+            elseif World.map[y+World.y][x+World.x] == 'G' then World.spritebatch:add(
+                World.sprites.quads['Grass'], (x*World.tile_w)+World.offset_x,
                 (y*World.tile_h)+World.offset_y)
-            elseif World.map[y+World.y][x+World.x] == 'S' then spritebatch:add(
-                spritesheet.quads['Sand'], (x*World.tile_w)+World.offset_x,
+            elseif World.map[y+World.y][x+World.x] == 'S' then World.spritebatch:add(
+                World.sprites.quads['Sand'], (x*World.tile_w)+World.offset_x,
                 (y*World.tile_h)+World.offset_y)
-            elseif World.map[y+World.y][x+World.x] == 'C' then spritebatch:add(
-                spritesheet.quads['City'], (x*World.tile_w)+World.offset_x,
+            elseif World.map[y+World.y][x+World.x] == 'C' then World.spritebatch:add(
+                World.sprites.quads['City'], (x*World.tile_w)+World.offset_x,
                 (y*World.tile_h)+World.offset_y)
-            elseif World.map[y+World.y][x+World.x] == 'W' then spritebatch:add(
-                spritesheet.quads['Water'], (x*World.tile_w)+World.offset_x,
+            elseif World.map[y+World.y][x+World.x] == 'W' then World.spritebatch:add(
+                World.sprites.quads['Water'], (x*World.tile_w)+World.offset_x,
                 (y*World.tile_h)+World.offset_y)
-            else spritebatch:add(
-                spritesheet.quads['Water'], (x*World.tile_w)+World.offset_x,
+            else World.spritebatch:add(
+                World.sprites.quads['Water'], (x*World.tile_w)+World.offset_x,
                 (y*World.tile_h)+World.offset_y)
             end
         end
     end
+    World.spritebatch:unbind()
+    love.graphics.draw(World.spritebatch)
 end
 
 -- Get commands

@@ -3,7 +3,6 @@ debug = true
 -- Import Functions
 loveframes = require("libs.loveframes")
 -- Boat Moad Imports
-mapsprites = require("res.sprites.mapsprites")
 ship = require("src.ship")
 wm = require("src.maps.worldmap")
 -- Town Mode Imports
@@ -18,7 +17,6 @@ end
 -- Load Functions
 function love.load()
 	mode = "Boat"
-	spritebatch = love.graphics.newSpriteBatch(mapsprites.texture, 1000, "stream")
 	font = love.graphics.newFont(30)
 	ship.init(wm)
 end
@@ -36,17 +34,14 @@ end
 -- Drawing Functions
 function love.draw()
 	-- Sprites
-	spritebatch:clear()
-	spritebatch:bind()
+
 	if mode == "Boat" then
 		love.graphics.setColor(255, 255, 255, 255)
-		wm.draw(spritebatch, mapsprites)
-		ship.draw(spritebatch, mapsprites)
+		wm.draw()
+		ship.draw()
 	elseif mode == "Town" then
 		activetown.draw()
 	end
-	spritebatch:unbind()
-	love.graphics.draw(spritebatch)
 
     -- Return to draw colour
   	love.graphics.setColor(255, 255, 255, 255)
