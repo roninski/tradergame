@@ -34,7 +34,6 @@ end
 -- Drawing Functions
 function love.draw()
 	-- Sprites
-
 	if mode == "Boat" then
 		love.graphics.setColor(255, 255, 255, 255)
 		wm.draw()
@@ -64,9 +63,7 @@ function love.keypressed(key, unicode)
 	    	activetown.setTown(towns[ship.getTown()])
 	    end
     elseif mode == "Town" then
-    	if key == 'x' then
-    		mode = ship.exitTown()
-    	end
+    	mode = activetown.move(key, unicode)
     end
     -- if mode ~= "Boat" then print (mode); end
     loveframes.keypressed(key, unicode)

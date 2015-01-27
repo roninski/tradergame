@@ -6,8 +6,6 @@ ship.y = 0
 ship.cam_x = 0
 ship.cam_y = 0
 ship.map = {}
-ship.atTown = false
-ship.town = 0
 ship.direction = 'Up'
 
 function ship.init(worldmap)
@@ -80,12 +78,6 @@ end
 -- Getters and Setters
 function ship.getTown()
     return ship.town
-end
-
-function ship.exitTown()
-    ship.town = 0
-    ship.atTown = false
-    return "Boat"
 end
 
 return ship
